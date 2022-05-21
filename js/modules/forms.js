@@ -51,7 +51,7 @@ function forms(formsSelector, modalTimerId) {
         thanksModal.classList.add('modal__dialog');
         thanksModal.innerHTML = `
             <div class="modal__content">
-                <div class="modal__close" data-close>X'</div>
+                <div class="modal__close" data-close>X</div>
                 <div class="modal__title">${message}</div>
             </div>
         `;
