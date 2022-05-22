@@ -321,7 +321,7 @@ function modal(triggerSelector, modalSelector, modalTimerId) {
             window.removeEventListener('scroll', showModalByScroll);
         }
     }
-    window.addEventListener('scroll', showModalByScroll);
+    // window.addEventListener('scroll', showModalByScroll);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (modal);

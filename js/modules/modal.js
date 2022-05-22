@@ -44,7 +44,7 @@ function modal(triggerSelector, modalSelector, modalTimerId) {
             window.removeEventListener('scroll', showModalByScroll);
         }
     }
-    window.addEventListener('scroll', showModalByScroll);
+    // window.addEventListener('scroll', showModalByScroll);
 }
 
 export default modal;
