@@ -38,13 +38,14 @@ function modal(triggerSelector, modalSelector, modalTimerId) {
         }
     });
 
-    function showModalByScroll() {
-        if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
-            openModal(modalSelector, modalTimerId);
-            window.removeEventListener('scroll', showModalByScroll);
-        }
-    }
+    // function showModalByScroll() {
+    //     if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+    //         openModal(modalSelector, modalTimerId);
+    //         window.removeEventListener('scroll', showModalByScroll);
+    //     }
+    // }
     // window.addEventListener('scroll', showModalByScroll);
+
 }
 
 export default modal;
