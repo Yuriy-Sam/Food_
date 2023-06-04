@@ -86,6 +86,46 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./js/data/db.js":
+/*!***********************!*\
+  !*** ./js/data/db.js ***!
+  \***********************/
+/*! exports provided: data */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "data", function() { return data; });
+const data = [
+  {
+    img: "img/tabs/vegy.jpg",
+    altimg: "vegy",
+    title: "Меню 'Фитнес'",
+    descr:
+      "Меню 'Фитнес' - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!",
+    price: 9,
+  },
+  {
+    img: "img/tabs/post.jpg",
+    altimg: "post",
+    title: "Меню 'Постное'",
+    descr:
+      "Меню 'Постное' - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.",
+    price: 14,
+  },
+  {
+    img: "img/tabs/elite.jpg",
+    altimg: "elite",
+    title: "Меню 'Премиум'",
+    descr:
+      "В меню 'Премиум' мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!",
+    price: 21,
+  },
+];
+
+
+/***/ }),
+
 /***/ "./js/modules/calc.js":
 /*!****************************!*\
   !*** ./js/modules/calc.js ***!
@@ -216,7 +256,9 @@ function calc() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _services_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/services */ "./js/services/services.js");
+/* harmony import */ var _data_db__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/db */ "./js/data/db.js");
+/* harmony import */ var _services_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/services */ "./js/services/services.js");
+
 
 function cards() {
   class MenuCard {
@@ -260,18 +302,11 @@ function cards() {
     }
   }
 
-  Object(_services_services__WEBPACK_IMPORTED_MODULE_0__["getResource"])("http://localhost:3000/menu").then((data) => {
-    data.forEach(({ img, altimg, title, descr, price }) => {
-      new MenuCard(
-        img,
-        altimg,
-        title,
-        descr,
-        price,
-        ".menu .container"
-      ).render();
-    });
+  //   getResource("http://localhost:3000/menu").then((data) => {
+  _data_db__WEBPACK_IMPORTED_MODULE_0__["data"].forEach(({ img, altimg, title, descr, price }) => {
+    new MenuCard(img, altimg, title, descr, price, ".menu .container").render();
   });
+  //   });
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (cards);
@@ -736,26 +771,35 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-window.addEventListener('DOMContentLoaded', function() {
-    const modalTimerId = setTimeout(() => Object(_modules_modal__WEBPACK_IMPORTED_MODULE_1__["openModal"])('.modal', modalTimerId), 50000);
+window.addEventListener("DOMContentLoaded", function () {
+  const modalTimerId = setTimeout(
+    () => Object(_modules_modal__WEBPACK_IMPORTED_MODULE_1__["openModal"])(".modal", modalTimerId),
+    50000
+  );
 
-    Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
-    Object(_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])('[data-modal]', '.modal', modalTimerId);
-    Object(_modules_timer__WEBPACK_IMPORTED_MODULE_2__["default"])('.timer', '2022-06-11');
-    Object(_modules_cards__WEBPACK_IMPORTED_MODULE_3__["default"])();
-    Object(_modules_calc__WEBPACK_IMPORTED_MODULE_4__["default"])();
-    Object(_modules_forms__WEBPACK_IMPORTED_MODULE_5__["default"])('form', modalTimerId);
-    Object(_modules_slider__WEBPACK_IMPORTED_MODULE_6__["default"])({
-        container: '.offer__slider',
-        slide: '.offer__slide',
-        nextArrow: '.offer__slider-next',
-        prevArrow: '.offer__slider-prev',
-        totalCounter: '#total',
-        currentCounter: '#current',
-        wrapper: '.offer__slider-wrapper',
-        field: '.offer__slider-inner'
-    });
+  Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])(
+    ".tabheader__item",
+    ".tabcontent",
+    ".tabheader__items",
+    "tabheader__item_active"
+  );
+  Object(_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])("[data-modal]", ".modal", modalTimerId);
+  Object(_modules_timer__WEBPACK_IMPORTED_MODULE_2__["default"])(".timer", "2023-12-12");
+  Object(_modules_cards__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  Object(_modules_calc__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  Object(_modules_forms__WEBPACK_IMPORTED_MODULE_5__["default"])("form", modalTimerId);
+  Object(_modules_slider__WEBPACK_IMPORTED_MODULE_6__["default"])({
+    container: ".offer__slider",
+    slide: ".offer__slide",
+    nextArrow: ".offer__slider-next",
+    prevArrow: ".offer__slider-prev",
+    totalCounter: "#total",
+    currentCounter: "#current",
+    wrapper: ".offer__slider-wrapper",
+    field: ".offer__slider-inner",
+  });
 });
+
 
 /***/ }),
 
