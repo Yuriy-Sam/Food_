@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npx webpack\" \"json-server db.json\"",
-    "build": "concurrently \"npx webpack\" \"json-server db.json\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
